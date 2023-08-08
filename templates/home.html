@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pixel Game Web Page</title>
+        <link rel="stylesheet" href="../static/css/basic_form/base.css">
+        <link rel="stylesheet" href="../static/css/basic_form/nav_footer.css">
+        <link rel="stylesheet" href="../static/css/home.css">
+    </head>
+
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>Only Pixel</h1>
+                
+                <div class="login-signup">
+                    <a href="login.html">로그인</a>
+                    <span> | </span>
+                    <a href="signup.html">회원가입</a>
+                </div>
+
+                <nav class="navigation">
+                    <div class="logo">
+                        <a href="home.html"><img src="../static/images/game-logo-removebg-preview.png" alt="Logo"></a>
+                    </div>
+                    <ul>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="recommendation.html">Recommendation</a></li>
+                        <li><a href="art_gallery.html">Art Gallery</a></li>
+                        <li><a href="#">Mini Game</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <section class="billboard">
+                    <div class="image-slider">
+                        <button id="prev-btn"><</button>
+                        <img id="slider-img" src="https://www.gameinformer.com/sites/default/files/styles/full/public/2023/05/03/10475b59/double_dragon_gaiden_2.jpg" alt="billboard img">
+                        <button id="next-btn">></button>
+                    </div>
+                </section>
+
+                <div class="contents">
+                    <section class="news">
+                        <div class="news-section section-div-box">
+                            <h2 class="section-title">픽셀 게임 뉴스</h2>
+                            <div class="news-section-left">
+                                <article>
+                                    <a href="./news_detail.html">
+                                        <div class="img-box news-img-box"><img src="{{ news[0].image_path }}" alt="news1"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[0].title }}</h3>
+                                            <p>{{ news[0].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article>
+                                    <a href="#">
+                                        <div class="img-box news-img-box"><img src="{{ news[1].image_path }}" alt="news2"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[1].title }}</h3>
+                                            <p>{{ news[1].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article>
+                                    <a href="#">
+                                        <div class="img-box news-img-box"><img src="{{ news[2].image_path }}" alt="news2"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[2].title }}</h3>
+                                            <p>{{ news[2].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="news-section-right">
+                                <article>
+                                    <a href="#">
+                                        <div class="img-box news-img-box"><img src="{{ news[3].image_path }}" alt="news2"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[3].title }}</h3>
+                                            <p>{{ news[3].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article>
+                                    <a href="#">
+                                        <div class="img-box news-img-box"><img src="{{ news[4].image_path }}" alt="news2"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[4].title }}</h3>
+                                            <p>{{ news[4].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article>
+                                    <a href="#">
+                                        <div class="img-box news-img-box"><img src="{{ news[5].image_path }}" alt="news2"></div>
+                                        <div class="news-content-box">
+                                            <h3>{{ news[5].title }}</h3>
+                                            <p>{{ news[5].content }}</p>
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="plus">
+                            <a href="./news.html">더보기</a>
+                        </div>
+                    </section>
+
+                    <section class="today-recommend">
+                        <div class="recommend-box section-div-box">
+                            <h2 class="section-title">오늘의 추천 게임</h2>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 1">
+                                    </div>
+                                    <h3>game titlegame titlegame titlegame titlegame titlegame titlegame titlegame titlegame title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 2">
+                                    </div>
+                                    <h3>game title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 3">
+                                    </div>
+                                    <h3>game title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 4">
+                                    </div>
+                                    <h3>game title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 5">
+                                    </div>
+                                    <h3>game title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="#">
+                                    <div class="img-box recommend-game-img-box">
+                                        <img src="../static/images/mcgill-library-V1IjTXINee0-unsplash.jpg" alt="recommend game 6">
+                                    </div>
+                                    <h3>game title</h3>
+                                    <p>
+                                        <span>game price</span>
+                                        <span> $</span>
+                                    </p>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="plus">
+                            <a href="./recommendation.html">더보기</a>
+                        </div>
+                    </section>
+
+                    <section class="art-gallery">
+                        <div class="art-box section-div-box">
+                            <h2 class="section-title">픽셀 아트 갤러리</h2>
+                            <div class="art-gallery-box">
+                                <div class="art-gallery-box-top">
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 1">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 2">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 3">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 4">
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="art-gallery-box-bottom">
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 5">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 6">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 7">
+                                            </a>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="img-box art-gallery-img-box">
+                                            <a href="#">
+                                                <img src="../static/images/aedrian-cDe4G55k6pE-unsplash.jpg" alt="pixel art 8">
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plus">
+                            <a href="art_gallery.html"><span>더보기</span></a>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-wrap">
+                    <div class="footer-top">
+                        <div class="desc">
+                            <div class="desc-logo-box">
+                                <img src="../static/images/game-logo-removebg-preview.png" alt="logo">
+                            </div>
+                        </div>
+
+                        <div class="sns">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="../static/images/youtube.png" alt="youtube">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="../static/images/instagram.png" alt="instagram">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="../static/images/twitch.png" alt="twitch">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>2023 Only Pixel</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <script>
+        window.onload = function(){
+            const images = [
+                "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/10/Potion-Permit_Potion-House.jpg?q=50&fit=crop&w=1500&dpr=1.5",
+                "https://cdn.akamai.steamstatic.com/steam/apps/1621690/ss_8fdb403db359d63c818708b001b39780721d53b2.600x338.jpg?t=1687352119",
+                "https://cdn.akamai.steamstatic.com/steam/apps/1868140/ss_783e1f6c2d4c358fb494d055c47c0e888922abd5.600x338.jpg?t=1690431681",
+                "https://www.gameinformer.com/sites/default/files/styles/full/public/2023/05/03/10475b59/double_dragon_gaiden_2.jpg"
+            ];
+
+            let currentImageIndex = 0;
+            const imgElement = document.getElementById("slider-img");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+
+            function showNextImage() {
+                console.log("clicked next button")
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                imgElement.src = images[currentImageIndex];
+            }
+
+            function showPreviousImage() {
+                console.log("clicked prev button")
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                imgElement.src = images[currentImageIndex];
+            }
+
+            function autoSlide() {
+                showNextImage();
+            }
+
+            // 3초마다 자동으로 이미지 전환
+            setInterval(autoSlide, 3000);
+
+            // 버튼 클릭 이벤트 처리
+            prevBtn.addEventListener("click", showPreviousImage);
+            nextBtn.addEventListener("click", showNextImage);
+        }
+    </script>
+</html>

@@ -1,0 +1,253 @@
+/* ==================== header ==================== */
+h1 {
+    height: 60px;
+    clip-path: polygon(0 0, 0 0, 0 0);  /* 숨김 */
+}
+
+.login-signup {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 5px 8px;
+    position: absolute;
+    top: 10px; right: 50px;
+}
+
+.navigation {
+    background-color:white;
+    height: 80px;
+    line-height: 80px;
+
+    border-radius: 30px;
+
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.logo {
+    width: 280px;
+    border-radius: 30px 0px 0px 30px;
+    text-align: center;
+    float: left;
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.logo img {
+    width:60%;
+    height:60%;
+    object-fit:cover;
+    vertical-align:middle;
+}
+
+.logo, .navigation ul {
+    float: left;
+}
+
+.navigation ul {
+    width: 1000px;
+}
+
+.navigation li {
+    float: left;
+    width: 190px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.navigation li:hover {
+    color: #f5ce00;
+    transition-duration: 0.3s;
+}
+
+.navigation li:last-child {
+    border-radius: 0px 30px 30px 0px;
+}
+
+.navigation ul a {
+    display: block;
+}
+
+/* ==================== footer ==================== */
+.footer-wrap {
+    padding-top: 30px;
+}
+
+.footer-top {
+    width: 100%;
+    height: 130px;
+}
+
+.desc {
+    float: left;
+    width: 200px;
+}
+
+.desc-logo-box {
+    width: 100%; height: 100%;
+    overflow:hidden;
+    margin:0 auto
+}
+
+.desc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sns {
+    float: right;
+}
+
+.sns li {
+    float: left;
+    margin-left: 20px;
+    width: 40px; height: 40px;
+    border-radius: 50%
+}
+
+.sns-img-box {
+    width: 100%; height: 100%;
+    overflow:hidden;
+    margin:0 auto
+}
+
+.sns-img-box img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.footer-wrap p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* ==================== 박스, 이미지 기본 폼 ==================== */
+
+.section-div-box {
+    background-color: white;
+    box-shadow: 0 0 0 1px #cccccc inset;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-bottom: 15px;  /* 콘텐츠-버튼 간격 */
+    padding: 24px 20px 20px 20px;
+    overflow: auto;
+}
+
+.img-box {
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.img-box img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.plus {
+    background-color:#f5ce00;
+    box-shadow: 0 0 0 1px #cccccc inset;
+    width: 500px; height: 50px;
+    margin: 0 auto;
+    border-radius: 15px;
+    text-align: center;
+    line-height : 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.plus a {
+    display: block;
+    width: 100%; height: 100%;
+}
+
+/* search */
+.search {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    border-radius: 30px;
+}
+
+.search form {
+    width: 1160px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.search form input {
+    float: left;
+}
+
+.search input[type="text"] {
+    width: 1100px; height: 100%;
+    box-sizing: border-box;
+    border-style: none;
+    padding: 0 10px;
+}
+
+.search input[type="text"]::placeholder {
+    color: #D2D2D2;
+}
+
+/* ==================== 페이지 기본 폼 ==================== */
+.page {
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+
+.pagination {
+    width: 900px; height: 100%;
+    background-color: white;
+    border-radius: 35px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.arrow, .num {
+    background-color: whitesmoke;
+    border-radius: 100%;
+}
+
+.arrow:hover, .num:hover {
+    background-color: #fff09b;
+    transition-duration: 0.5s;
+    /* background: radial-gradient( #f5ce00 1px, white 80% ); */
+}
+
+.page li:first-child {
+    padding-right: 20px;
+}
+
+.page li:last-child {
+    padding-left: 20px;
+    margin-right: 0;
+}
+
+.page li a {
+    display: block;
+}

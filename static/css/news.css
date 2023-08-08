@@ -1,0 +1,78 @@
+.navigation ul li:nth-child(1) {
+    color:black;
+    background: radial-gradient( #ccc, white, white );
+}
+
+.search input[type="text"]::placeholder {
+    color: #D2D2D2;
+}
+
+/* news section */
+article {
+    width: 100%; height:150px;
+    margin-bottom: 20px;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+.news-img-box {
+    width: 200px; height: 150px;
+    border-radius: 10px;
+    float: left;
+}
+
+.news-content-box {
+    float: left;
+    height: 150px; width: 1040px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+.news-content-box h3 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.4rem;
+
+    /* 한 줄 자르기 */
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-content-box h3:hover {
+    text-decoration: underline black;
+}
+
+.news-content-box p:nth-child(2) {
+    width: 100%; height: 84px;
+    padding: 0 0 4px 0;
+    font-size: 1.2rem;
+    color:#555555;
+
+    /* 한 줄 자르기 */
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* 여러 줄 자르기 추가 스타일 */
+    white-space: normal;
+    line-height: 1.4;
+    height: 4.2em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.news-content-box p:last-child {
+    width: 100%; height: 20px;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #666666;
+}

@@ -1,0 +1,189 @@
+/* ==================== main ==================== */
+.billboard {
+    height: 300px;
+    margin-bottom: 30px;
+    background-color: black;
+    width: 100%; height: 300px;
+    border-radius: 20px;
+    position: relative;
+}
+.image-slider {
+    width: 100%; height: 100%;
+}
+.billboard img {
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    object-fit:cover;
+}
+.billboard button {
+    position: absolute;
+    top: 130px;
+    font-size: 50px; height: 40px; line-height: 40px;
+    background: transparent; /* 배경색을 투명으로 설정 */
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 100;
+}
+.billboard #prev-btn {
+    left: 30px;
+}
+.billboard #next-btn {
+    right: 30px;
+}
+
+.contents section {
+    margin-bottom: 70px;  /* 간격 */
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    margin-left: 4px;
+}
+
+/* ==================== main > Pixel Game News ==================== */
+.news-section-left, .news-section-right {
+    float: left;
+}
+
+.news-section-left {
+    width: 50%;
+}
+
+.news-section-right {
+    width: 50%;
+}
+
+.news-section article {
+    padding: 16px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.news-section article a {
+    display: block;
+    height: 124px;
+}
+
+.news-section article a div {
+    float: left;
+}
+
+.news-img-box {
+    height: 100%; width: 250px;
+    border-radius: 10px;
+}
+
+.news-content-box {
+    height: 100%; width: 354px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+}
+
+.news-section h3 {
+    font-size: 1.2rem;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-section p {
+    font-size: 1rem;
+    margin-top: 8px;
+    width: 100%; height: 70px;
+
+    /* 한 줄 자르기 */
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* 여러 줄 자르기 추가 스타일 */
+    white-space: normal;
+    line-height: 1.4;
+    height: 4.2em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.news-section-left > article:nth-child(1), .news-section-right > article:nth-child(1) {
+    padding-top: 0;
+}
+.news-section-left > article:nth-child(3), .news-section-right > article:nth-child(3) {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* ==================== main > Today's Pixel Game Recommendation ==================== */
+.recommend-box article {
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 200px; height: 400px;
+    float: left;
+}
+
+.recommend-box article:not(:last-child) {
+    margin-right: 8px;
+}
+
+.recommend-game-img-box {
+    width: 100%; height: 300px;
+    border-radius: 10px;
+}
+
+.recommend-box article h3, .recommend-box article p {
+    height: 42px;
+    line-height: 42px;
+    padding: 4px;
+}
+
+.recommend-box article h3 {
+    padding-left: 10px;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recommend-box article p {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==================== main > Pixel Art Gallery ==================== */
+.art-gallery-box article {
+    width: 304px;
+    height: 304px;
+    float: left;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.art-gallery-box-top article:not(:last-child), .art-gallery-box-bottom article:not(:last-child) {
+    margin-right: 8px;
+}
+
+.art-gallery-box-top article {
+    margin-bottom: 8px;
+}
+
+.art-gallery-box article a {
+    display: block;
+    height: 100%;
+}
+
+.art-gallery-img-box {
+    width: 100%; height: 100%;
+    border-radius: 10px;
+}

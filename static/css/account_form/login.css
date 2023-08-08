@@ -1,0 +1,107 @@
+header, main, .footer-wrap {
+    width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    height: 160px;
+    clip-path: polygon(0 0, 0 0, 0 0); /* 숨김 */
+}
+
+.logo-img-box {
+    width: 325px; height: 100%;
+    text-align: center;
+    overflow:hidden;
+    margin:0 auto;
+    margin-bottom: 50px;
+}
+
+.logo-img-box img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    vertical-align:middle;
+}
+
+/* 로그인 화면 */
+.login-wrap {
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px #cccccc inset;
+    box-sizing: border-box;
+}
+
+#login-form > input {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+}
+
+#login-form > input:first-child {
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
+}
+
+#login-form > input:nth-child(2) {
+    border-radius: 0px 0px 10px 10px;
+}
+
+#login-form > label > input {
+    margin: 20px 0px;
+}
+
+#login-form > label {
+    font-size: 1rem;
+}
+
+#login-form > input[type="submit"] {
+    background-color: #f5ce00;
+    font-weight: bold;
+}
+
+#login-form > input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+#login-form > input::placeholder{
+    color: #D2D2D2;
+}
+
+/* 비번찾기 아이디찾기 회원가입 */
+.find-wrap {
+    width: 360px;
+    margin: 14px auto;
+    text-align: center;
+    color:#a3a3a3;
+}
+
+.find-wrap li {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.find-wrap li:after {
+    content:" | "
+}
+
+.find-wrap li:last-child:after {
+    content:""
+}
+
+.find-wrap a:hover {
+    text-decoration-line: underline;
+    color: black;
+}
+
+/* footer */
+footer p {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    top: 150px;
+}

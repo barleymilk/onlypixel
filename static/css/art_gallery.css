@@ -1,0 +1,76 @@
+.navigation ul li:nth-child(3) {
+    color:black;
+    background: radial-gradient( #ccc, white, white );
+}
+
+/* 콘텐츠 */
+.art-gallery-box-row {
+    float: left;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 8px;
+}
+.art-gallery-box-row:last-child {
+    margin-bottom: 0;
+}
+
+.art-gallery-box article {
+    float: left;
+    width: 304px; height: 400px;
+    margin-right: 8px;
+}
+.art-gallery-box article:nth-child(4) {
+    margin-right: 0;
+}
+.art-gallery-img-box {
+    width: 304px; height: 304px;
+}
+.art-gallery-img-box img {
+    width: 100%; height: 100%;
+}
+
+.gallery-content-box {
+    width: 100%; height: 96px;
+    padding: 4px 6px;
+    box-sizing: border-box;
+}
+.gallery-content-box p {
+    border-bottom: 1px solid whitesmoke;
+    box-sizing: border-box;
+}
+.gallery-content-box > p {
+    height: 24px;
+    line-height: 24px;
+    font-size: 0.9rem;
+    color:#666666;
+}
+.gallery-content-box > a > p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    /* 한 줄 자르기 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.gallery-content-box > a > p:hover {
+    text-decoration: underline;
+}
+
+.gallery-content-box > p:last-child {
+    border-bottom: none;
+    font-size: 0.8rem;
+    color:#666666;
+}
+
+.gallery-content-box > p:last-child span {
+    display: block;
+    float: left;
+    width: 44px;
+}
+.gallery-content-box > p:last-child span:nth-child(2),
+.gallery-content-box > p:last-child span:nth-child(4) {
+    width: 102px;
+}

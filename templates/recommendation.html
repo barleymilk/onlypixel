@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pixel Game Web Page</title>
+        <link rel="stylesheet" href="css/basic_form/base.css">
+        <link rel="stylesheet" href="css/basic_form/nav_footer.css">
+        <link rel="stylesheet" href="css/recommendation.css">
+    </head>
+
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>Only Pixel</h1>
+                
+                <div class="login-signup">
+                    <a href="login.html">로그인</a>
+                    <span> | </span>
+                    <a href="signup.html">회원가입</a>
+                </div>
+
+                <nav class="navigation">
+                    <div class="logo">
+                        <a href="home.html"><img src="images/game-logo-removebg-preview.png" alt="Logo"></a>
+                    </div>
+                    <ul>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="recommendation.html">Recommendation</a></li>
+                        <li><a href="art_gallery.html">Art Gallery</a></li>
+                        <li><a href="#">Mini Game</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="contents">
+                    <div class="search">
+                        <form method="post" action="" id="search-form">
+                            <input type="text" name="search" placeholder="Search">
+                            <input type="image" src="images/search-icon.png" alt="검색" style="width: 40px; height: 40px; position:relative; top: 10px; left: 10px;">
+                        </form>
+                    </div>
+
+                    <div class="game-menu">
+                        <div class="menu-section">
+                            <div class="category"><p>게임 장르</p></div>
+                            <div class="category-list">
+                                <ul>
+                                    <li><a href="#" data-value="MMO">MMO</a></li>
+                                    <li><a href="#" data-value="RPG">RPG</a></li>
+                                    <li><a href="#" data-value="레이싱">레이싱</a></li>
+                                    <li><a href="#" data-value="스포츠">스포츠</a></li>
+                                    <li><a href="#" data-value="시뮬레이션">시뮬레이션</a></li>
+                                    <li><a href="#" data-value="액션">액션</a></li>
+                                    <li><a href="#" data-value="어드벤처">어드벤처</a></li>
+                                    <li><a href="#" data-value="인디">인디</a></li>
+                                    <li><a href="#" data-value="전략">전략</a></li>
+                                    <li><a href="#" data-value="캐주얼">캐주얼</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-section">
+                            <div class="category"><p>지원 언어</p></div>
+                            <div class="category-list">
+                                <ul>
+                                    <li><a href="#" data-value="한국어">한국어</a></li>
+                                    <li><a href="#" data-value="영어">영어</a></li>
+                                    <li><a href="#" data-value="일본어">일본어</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-section">
+                            <div class="category"><p>가격</p></div>
+                            <div class="category-list">
+                                <ul>
+                                    <li><a href="#" data-value="1,000원 미만">1,000원 미만</a></li>
+                                    <li><a href="#" data-value="1,000 ~ 5,000원">1,000 ~ 5,000원</a></li>
+                                    <li><a href="#" data-value="5,000 ~ 10,000원">5,000 ~ 10,000원</a></li>
+                                    <li><a href="#" data-value="10,000 ~ 20,000원">10,000 ~ 20,000원</a></li>
+                                    <li><a href="#" data-value="20,000 ~ 30,000원">20,000 ~ 30,000원</a></li>
+                                    <li><a href="#" data-value="30,000 ~ 50,000원">30,000 ~ 50,000원</a></li>
+                                    <li><a href="#" data-value="50,000 ~ 100,000원">50,000 ~ 100,000원</a></li>
+                                    <li><a href="#" data-value="100,000원 이상">100,000원 이상</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag">
+                        <div class="chosen-tag">
+                            <div class="tag-button">
+                                <a class="img-box" href="#">
+                                    <div><img src="images/reload.png" alt="delete-tag"></div>
+                                    <p>초기화</p>
+                                </a>
+                            </div>
+                            <div class="tag-list">
+                                <ul>
+                                    <!-- <li><a href="#">태그1<span> X</span></a></li> -->
+                                    <!-- <li><a href="#">태그1<span> X</span></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <label>
+                          <input type="radio" name="order-option" value="latest" checked />
+                          <span>최신순</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="order-option" value="price-high" />
+                          <span>가격높은순</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="order-option" value="price-low" />
+                          <span>가격낮은순</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="order-option" value="name" />
+                          <span>이름순</span>
+                        </label>
+                    </fieldset>
+                    
+                    <section>
+                        <div class="section-div-box">
+                            <article>
+                                <div class="img-box game-img-box"><a href="#"><img src="images/game-recommend/WorldBox - God Simulator.jpg" alt="game1"></a></div>
+                                <div class="game-content-box">
+                                    <a href="#"><h3>WorldBox - God Simulator</h3></a>
+                                    <p><span>21,500</span><span> ₩</span></p>
+                                    <p>배포 날짜 : <span>2021년 12월 3일</span></p>
+                                    <p>월드박스는 얼티밋 신 시뮬레이터 및 샌드박스 게임입니다. 당신만의 세계를 만들거나 다른 힘을 사용하여 그것을 파괴하십시오. 문명이 성장하고, 왕국을 형성하고, 새로운 땅을 식민지화하고, 먼 대륙으로 항해하는 것을 지켜 보십시오. 마을은 반란을 일으키고, 제국은 몰락할 것입니다. 그들이 싸우는 것을 돕거나 지켜보는 것은 당신의 선택입니다.</p>
+                                    <ul class="game-tag">
+                                        <li>샌드박스</li>
+                                        <li>시뮬레이션</li>
+                                        <li>God Game</li>
+                                        <li>휴식</li>
+                                    </ul>
+                                </div>
+                                <div class="like">
+                                    <div class="img-box">
+                                        <span></span>
+                                        <a href="#"><img src="images/heart.png" alt="like"></a>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article>
+                                <div class="img-box game-img-box"><a href="#"><img src="images/game-recommend/Vampire Survivors.jpg" alt="game1"></a></div>
+                                <div class="game-content-box">
+                                    <a href="#"><h3>Vampire Survivors</h3></a>
+                                    <p><span>5,000</span><span> ₩</span></p>
+                                    <p>배포 날짜 : <span>2022년 10월 21일</span></p>
+                                    <p>수천 개의 밤 생물체를 베어내고 새벽까지 살아남으세요! 뱀파이어 서바이벌은 악당 라이트 요소가 있는 고딕 공포 캐주얼 게임으로, 선택 사항을 통해 수백 개의 몬스터가 던져지는 것에 빠르게 눈덩이를 만들 수 있습니다.</p>
+                                    <ul class="game-tag">
+                                        <li>액션</li>
+                                        <li>로그라이크</li>
+                                        <li>인디</li>
+                                        <li>아케이드</li>
+                                        <li>다크 판타지</li>
+                                    </ul>
+                                </div>
+                                <div class="like">
+                                    <div class="img-box">
+                                        <span></span>
+                                        <a href="#"><img src="images/heart.png" alt="like"></a>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article>
+                                <div class="img-box game-img-box"><a href="#"><img src="images/game-recommend/Terraria.jpg" alt="game1"></a></div>
+                                <div class="game-content-box">
+                                    <a href="#"><h3>Terraria</h3></a>
+                                    <p><span>10,500</span><span> ₩</span></p>
+                                    <p>배포 날짜 : <span>2011년 5월 17일</span></p>
+                                    <p>파고, 싸우고, 탐험하고, 만들고! 이 액션이 가득한 모험 게임에서 불가능한 것은 없습니다. 포팩 또한 이용 가능합니다!</p>
+                                    <ul class="game-tag">
+                                        <li>샌드박스</li>
+                                        <li>오픈월드</li>
+                                        <li>싱글</li>
+                                        <li>멀티</li>
+                                        <li>크래프팅</li>
+                                        <li>빌딩</li>
+                                        <li>액션</li>
+                                        <li>모험</li>                                     
+                                    </ul>
+                                </div>
+                                <div class="like">
+                                    <div class="img-box">
+                                        <span></span>
+                                        <a href="#"><img src="images/heart.png" alt="like"></a>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="page">
+                    <ul class="pagination">
+                        <li><a class="first" href="#">처음</a></li>
+                        <li><a class="arrow left" href="#"><</a></li>
+                        <li><a class="active num" href="#">1</a></li>
+                        <li><a class="active num" href="#">2</a></li>
+                        <li><a class="active num" href="#">3</a></li>
+                        <li><a class="active num" href="#">4</a></li>
+                        <li><a class="active num" href="#">5</a></li>
+                        <li><a class="active num" href="#">6</a></li>
+                        <li><a class="active num" href="#">7</a></li>
+                        <li><a class="active num" href="#">8</a></li>
+                        <li><a class="active num" href="#">9</a></li>
+                        <li><a class="active num" href="#">10</a></li>
+                        <li><a class="arrow right" href="#">></a></li>
+                        <li><a class="last" href="#">끝</a></li>
+                    </ul>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-wrap">
+                    <div class="footer-top">
+                        <div class="desc">
+                            <div class="desc-logo-box">
+                                <img src="images/game-logo-removebg-preview.png" alt="logo">
+                            </div>
+                        </div>
+
+                        <div class="sns">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="images/youtube.png" alt="youtube">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="images/instagram.png" alt="instagram">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="sns-img-box">
+                                            <img src="images/twitch.png" alt="twitch">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>2023 Only Pixel</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <!-- 자바스크립트 코드를 추가하여 클릭 이벤트를 처리합니다. -->
+    <!-- <script>
+        // 문서가 완전히 로드된 후에 스크립트를 적용하도록 대기합니다.
+        document.addEventListener('DOMContentLoaded', function() {
+            const genreLinks = document.querySelectorAll('a[data-value]');
+
+            // 클릭 이벤트 리스너를 추가하여 클릭 시 파란색으로 표시하거나 원래색으로 변경합니다.
+            genreLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // 이미 선택된 li인 경우 선택 상태를 해제하고, 그렇지 않은 경우 파란색으로 변경합니다.
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        removeTag(this.getAttribute('data-value'));
+                    } else {
+                        this.classList.add('selected');
+                        addTag(this.getAttribute('data-value'));
+                    }
+                });
+            });
+
+            // 선택한 장르를 tag-list에 추가합니다.
+            function addTag(value) {
+                const tagList = document.querySelector('.tag-list ul');
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#">${value}<span> X</span></a>`;
+                tagList.appendChild(li);
+            }
+
+            // 선택한 장르를 tag-list에서 제거합니다.
+            function removeTag(value) {
+                const tagList = document.querySelector('.tag-list ul');
+                const tags = tagList.querySelectorAll('li');
+                tags.forEach(tag => {
+                    if (tag.textContent.includes(value)) {
+                        tagList.removeChild(tag);
+                    }
+                });
+            }
+        });
+    </script> -->
+
+    <!-- 자바스크립트 코드를 추가하여 클릭 이벤트를 처리합니다. -->
+    <script>
+        // 문서가 완전히 로드된 후에 스크립트를 적용하도록 대기합니다.
+        document.addEventListener('DOMContentLoaded', function() {
+            const genreLinks = document.querySelectorAll('a[data-value]');
+            const lastUlItems = document.querySelectorAll('.category-list ul:last-child li');
+
+            // 클릭 이벤트 리스너를 추가하여 클릭 시 파란색으로 표시하거나 원래색으로 변경합니다.
+            genreLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // 이미 선택된 li인 경우 선택 상태를 해제하고, 그렇지 않은 경우 파란색으로 변경합니다.
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        removeTag(this.getAttribute('data-value'));
+                    } else {
+                        this.classList.add('selected');
+                        addTag(this.getAttribute('data-value'));
+                    }
+                });
+            });
+
+            lastUlItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // 이미 선택된 li인 경우 선택 상태를 해제하고, 그렇지 않은 경우 파란색으로 변경합니다.
+                    if (this.querySelector('a').classList.contains('selected')) {
+                        this.querySelector('a').classList.remove('selected');
+                        removeTag(this.querySelector('a').getAttribute('data-value'));
+                    } else {
+                        this.querySelector('a').classList.add('selected');
+                        addTag(this.querySelector('a').getAttribute('data-value'));
+                    }
+                });
+            });
+
+            // 선택한 장르를 tag-list에 추가합니다.
+            function addTag(value) {
+                const tagList = document.querySelector('.tag-list ul');
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#">${value}<span> X</span></a>`;
+                tagList.appendChild(li);
+            }
+
+            // 선택한 장르를 tag-list에서 제거합니다.
+            function removeTag(value) {
+                const tagList = document.querySelector('.tag-list ul');
+                const tags = tagList.querySelectorAll('li');
+                tags.forEach(tag => {
+                    if (tag.textContent.includes(value)) {
+                        tagList.removeChild(tag);
+                    }
+                });
+            }
+        });
+    </script>
+
+</html>

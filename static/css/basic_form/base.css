@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+	font-family: 'IBMPlexSansKR-Regular';
+}
+body {
+    background-color: #f5f7f8;;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic","맑은 고딕",helvetica,arial,"Apple SD Gothic Neo",sans-serif; */
+    font-weight: 300; /* 글자 두께 */
+    font-size: 1em;
+    line-height: 1.25; /* 줄 간격 */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased; /* 글자 부드럽게 */
+    background-size: cover; /* 배경 이미지 기본 크기 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 */
+    background-position: center; /* 배경 이미지 정렬 위치 */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+}
+
+body, input, textarea, select, button, table {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#wrap {
+    min-width: 1340px;
+    background-color: whitesmoke;
+}
+
+header, main, .footer-wrap {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #e2e2e2;
+    height: 200px;
+    margin-top: 150px;
+}
