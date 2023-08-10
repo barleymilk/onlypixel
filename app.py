@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     db_conn = pymysql.connect(host='127.0.0.1', user='root',
-            password='Hu$r9nq!4opA', database='myweb',
+            password='Hu$r9nq!', database='onlypixel',
             autocommit=True, cursorclass=pymysql.cursors.DictCursor)
     with db_conn:
         db_cursor = db_conn.cursor()
