@@ -1,0 +1,12 @@
+.section-div-box {
+    text-align: center;
+    display: table;
+    width: 100%;
+}
+.section-div-box p {
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 36px;
+    color:rgb(110, 110, 110);
+}
