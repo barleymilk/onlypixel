@@ -60,6 +60,18 @@ class User(BaseModel):
     access_token: str
     reports: int = 0
 
+class UserCreate(BaseModel):
+    email: str
+    password: str
+    phone_number: str
+    nickname: str
+    birth_date: date
+    profile_image: str
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
 class Comment(BaseModel):
     id: int
     commu_id: int
