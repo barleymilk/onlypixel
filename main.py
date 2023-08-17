@@ -446,6 +446,10 @@ _sample_news = [
 
 import smtplib
 from email.message import EmailMessage
+import os
+
+# 환경 변수에서 앱 비밀번호 가져오기
+app_password = os.environ.get("GMAIL_APP_PASSWORD")
 
 # 이메일 인증코드 생성 함수
 def generate_verification_code():
@@ -467,7 +471,7 @@ def send_verification_email(email, code):
     # Gmail 사용 예시
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login("barleymilk640@gmail.com", "gtzzwqhxpfdavmje")  # 발송 이메일 계정 정보
+    server.login("barleymilk640@gmail.com", app_password)  # 발송 이메일 계정 정보
     server.send_message(msg)
     server.quit()
 
