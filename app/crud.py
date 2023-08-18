@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from .database import SessionLocal
 from . import models, schemas
-from .DTO import GameCreate, NewsCreate
+from .schemas import GameCreate, NewsCreate
 
 
 def get_db():
@@ -11,11 +11,19 @@ def get_db():
     finally:
         db.close()
 
-def get_games(db: Session):
-    return db.query(models.Game).all()
+def get_games(db: Session, limit: int = None):
+    query = db.query(models.Game)
+    if limit is not None:
+        query = query.limit(limit)
+    return query.all()
+    # return db.query(models.Game).all()
 
-def get_news(db: Session):
-    return db.query(models.News).all()
+def get_news(db: Session, limit: int = None):
+    query = db.query(models.News)
+    if limit is not None:
+        query = query.limit(limit)
+    return query.all()
+    # return db.query(models.News).all()
 
 def create_game(db: Session, game: GameCreate):
     db_game = models.Game(**game.dict())

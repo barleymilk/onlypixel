@@ -9,7 +9,7 @@ from passlib.context import CryptContext
 from datetime import date, datetime, timedelta
 import random
 
-from app.DTO import Game, News, Community, User, Token, TokenData, UserInDB, UserCreate, UserLogin, GameCreate, NewsCreate
+from app.schemas import Game, News, Community, User, Token, TokenData, UserInDB, UserCreate, UserLogin, GameCreate, NewsCreate
 
 from dotenv import load_dotenv
 
@@ -158,14 +158,8 @@ app = FastAPI()
 ## 메인페이지
 @app.get("/")
 async def root(db: Session = Depends(crud.get_db)):
-    # game_data = _sample_games[:6]  # 첫 6개의 게임 데이터 가져오기
-    # news_data = _sample_news[:6]    # 첫 6개의 뉴스 데이터 가져오기
-
-    # games = [Game(**game) for game in game_data]
-    # news = [News(**news) for news in news_data]
-
-    games = crud.get_games(db)
-    news = crud.get_news(db)
+    games = crud.get_games(db, limit=6)
+    news = crud.get_news(db, limit=6)
 
     return {"games": games, "news": news}
 
@@ -173,10 +167,10 @@ async def root(db: Session = Depends(crud.get_db)):
 @app.post("/games")
 async def create_game(game: GameCreate, db: Session = Depends(database.get_db)):
     return crud.create_game(db, game)
-
+### (임시) 뉴스 데이터 집어넣는 기능
 @app.post("/news")
-async def create_news(game: NewsCreate, db: Session = Depends(database.get_db)):
-    return crud.create_news(db, game)
+async def create_news(news: NewsCreate, db: Session = Depends(database.get_db)):
+    return crud.create_news(db, news)
 
 
 ## 회원가입
