@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from .database import SessionLocal
 from . import models, schemas
 from .DTO import GameCreate, NewsCreate
 
