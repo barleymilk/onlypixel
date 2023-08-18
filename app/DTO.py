@@ -22,8 +22,6 @@ class Game(BaseModel):
     image_path: List[str]
     video_path: Optional[List[str]] = None
 
-    class Config:
-        orm_mode = True
 
 class GameCreate(BaseModel):
     name: str
@@ -44,6 +42,7 @@ class GameCreate(BaseModel):
     image_path: List[str]
     video_path: Optional[List[str]] = None
 
+
 class News(BaseModel):
     id: int
     title: str
@@ -56,9 +55,16 @@ class News(BaseModel):
     image_path: Optional[List[str]] = None
     video_path: Optional[List[str]] = None
 
-    class Config:
-        orm_mode = True
-
+class NewsCreate(BaseModel):
+    title: str
+    content: str
+    author: str
+    written_date: datetime
+    last_modified_date: datetime
+    views: int = 0
+    likes: int = 0
+    image_path: Optional[List[str]] = None
+    video_path: Optional[List[str]] = None
 
 class Community(BaseModel):
     id: int
@@ -90,9 +96,6 @@ class User(BaseModel):
     access_token: str
     disabled: bool = False
     reports: int = 0
-
-    class Config:
-        orm_mode = True
 
 
 class Token(BaseModel):
@@ -132,8 +135,6 @@ class Comment(BaseModel):
     likes: int = 0
     reports: int = 0
 
-    class Config:
-        orm_mode = True
 
 
 class LoginHistory(BaseModel):
@@ -142,8 +143,6 @@ class LoginHistory(BaseModel):
     login_time: datetime
     status: str
 
-    class Config:
-        orm_mode = True
 
 
 class NewsGame(BaseModel):

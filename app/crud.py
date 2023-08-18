@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from . import models, schemas
-from .DTO import GameCreate
+from .DTO import GameCreate, NewsCreate
 
 
 def get_db():
@@ -22,6 +22,13 @@ def create_game(db: Session, game: GameCreate):
     db.commit()
     db.refresh(db_game)
     return db_game
+
+def create_news(db: Session, game: NewsCreate):
+    db_news = models.News(**game.dict())
+    db.add(db_news)
+    db.commit()
+    db.refresh(db_news)
+    return db_news
 
 # def get_user(db: Session, user_id: int):
 #     return db.query(models.User).filter(models.User.id == user_id).first()

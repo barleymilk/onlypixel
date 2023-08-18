@@ -9,7 +9,7 @@ from passlib.context import CryptContext
 from datetime import date, datetime, timedelta
 import random
 
-from app.DTO import Game, News, Community, User, Token, TokenData, UserInDB, UserCreate, UserLogin, GameCreate
+from app.DTO import Game, News, Community, User, Token, TokenData, UserInDB, UserCreate, UserLogin, GameCreate, NewsCreate
 
 from dotenv import load_dotenv
 
@@ -169,9 +169,14 @@ async def root(db: Session = Depends(crud.get_db)):
 
     return {"games": games, "news": news}
 
+### (임시) 게임 데이터 집어넣는 기능
 @app.post("/games")
 async def create_game(game: GameCreate, db: Session = Depends(database.get_db)):
     return crud.create_game(db, game)
+
+@app.post("/news")
+async def create_news(game: NewsCreate, db: Session = Depends(database.get_db)):
+    return crud.create_news(db, game)
 
 
 ## 회원가입
