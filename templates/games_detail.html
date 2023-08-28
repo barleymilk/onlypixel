@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/games_detail.css">
+{% endblock %}
+
+{% block content %}
+<div class="section-div-box">
+    <h2>{{ game_item.title }}</h2>
+    <div class="key-content-box">
+        <div class="media-box">
+            <img src="{{ game_item.image_path[0] }}" alt="game-image">
+        </div>
+        <div class="info-box">
+            <ul>
+                <li>{{ game_item.title }}</li>
+                <li>가격 : {{ game_item.price }}원</li>
+                <li>언어 : {{ game_item.languages }}</li>
+                <li>genre : {{ game_item.genre }}</li>
+                <li>개발자 : {{ game_item.developer }}</li>
+                <li>퍼블리셔 : {{ game_item.publisher }}</li>
+                <li class="like">
+                    <div class="like-img-box">
+                        <img src="../static/images/heart.png", alt="like">
+                    </div>
+                    <p>찜하기 {{ game_item.likes }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="description">
+        <ul>
+            <li>description : {{ game_item.description }}</li>
+            <li>tags : {{ game_item.tags }}</li>
+            <li>release date : {{ game_item.release_date }}</li>
+            <li>early access release date : {{ game_item.early_access_release_date }}</li>
+            
+        </ul>
+        <div>
+            <p>minimum_system_requirements : {{ game_item.minimum_system_requirements }}</p>
+            <p>recommended_system_requirements : {{ game_item.recommended_system_requirements }}</p>
+        </div>
+        <div>
+            <p>game_rating : {{ game_item.game_rating }}</p>
+            <p>game_censorship : {{ game_item.game_censorship }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

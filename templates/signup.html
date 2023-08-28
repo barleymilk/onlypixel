@@ -10,7 +10,7 @@
             <header>
                 <h1>Sign Up Page</h1>
                 <div class="logo-img-box">
-                    <a href="home.html">
+                    <a href="/">
                         <img src="../static/images/game-logo-removebg-preview.png" alt="logo">
                     </a>
                 </div>
@@ -20,10 +20,10 @@
 
             <main>
                 <form method="post" action="#" id="signup-form">
-                    <input type="email" name="ID" placeholder="Email"><br>
+                    <input type="email" name="email" placeholder="Email"><br>
                     <input type="submit" value="Continue">
                 </form>
-                <p class="to-login">Already have an account? <a href="login.html">Log in</a></p>
+                <p class="to-login">Already have an account? <a href="/login">Log in</a></p>
                 <p class="or">OR</p>
                 <ul>
                     <li>
@@ -58,4 +58,8 @@
             </footer>
         </div>
     </body>
+    <script>
+        form.email.value = encodeURIComponent(form.email.value);
+        form.submit();
+    </script>
 </html>

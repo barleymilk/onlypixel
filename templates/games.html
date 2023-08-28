@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/games.css">
+{% endblock %}
+
+{% block content %}
+<div class="contents">
+    <div class="search">
+        <form method="post" action="" id="search-form">
+            <input type="text" name="search" placeholder="Search">
+            <input type="image" src="../static/images/search-icon.png" alt="검색" style="width: 40px; height: 40px; position:relative; top: 10px; left: 10px;">
+        </form>
+    </div>
+
+    <div class="game-menu">
+        <div class="menu-section">
+            <div class="category"><p>게임 장르</p></div>
+            <div class="category-list">
+                <ul>
+                    <li><a href="#" data-value="MMO">MMO</a></li>
+                    <li><a href="#" data-value="RPG">RPG</a></li>
+                    <li><a href="#" data-value="레이싱">레이싱</a></li>
+                    <li><a href="#" data-value="스포츠">스포츠</a></li>
+                    <li><a href="#" data-value="시뮬레이션">시뮬레이션</a></li>
+                    <li><a href="#" data-value="액션">액션</a></li>
+                    <li><a href="#" data-value="어드벤처">어드벤처</a></li>
+                    <li><a href="#" data-value="인디">인디</a></li>
+                    <li><a href="#" data-value="전략">전략</a></li>
+                    <li><a href="#" data-value="캐주얼">캐주얼</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-section">
+            <div class="category"><p>지원 언어</p></div>
+            <div class="category-list">
+                <ul>
+                    <li><a href="#" data-value="한국어">한국어</a></li>
+                    <li><a href="#" data-value="영어">영어</a></li>
+                    <li><a href="#" data-value="일본어">일본어</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-section">
+            <div class="category"><p>가격</p></div>
+            <div class="category-list">
+                <ul>
+                    <li><a href="#" data-value="1,000원 미만">1,000원 미만</a></li>
+                    <li><a href="#" data-value="1,000 ~ 5,000원">1,000 ~ 5,000원</a></li>
+                    <li><a href="#" data-value="5,000 ~ 10,000원">5,000 ~ 10,000원</a></li>
+                    <li><a href="#" data-value="10,000 ~ 20,000원">10,000 ~ 20,000원</a></li>
+                    <li><a href="#" data-value="20,000 ~ 30,000원">20,000 ~ 30,000원</a></li>
+                    <li><a href="#" data-value="30,000 ~ 50,000원">30,000 ~ 50,000원</a></li>
+                    <li><a href="#" data-value="50,000 ~ 100,000원">50,000 ~ 100,000원</a></li>
+                    <li><a href="#" data-value="100,000원 이상">100,000원 이상</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tag">
+        <div class="chosen-tag">
+            <div class="tag-button">
+                <a class="img-box" href="#">
+                    <div><img src="../static/images/reload.png" alt="delete-tag"></div>
+                    <p>초기화</p>
+                </a>
+            </div>
+            <div class="tag-list">
+                <ul>
+                    <!-- <li><a href="#">태그1<span> X</span></a></li> -->
+                    <!-- <li><a href="#">태그1<span> X</span></a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <fieldset>
+        <label>
+            <input type="radio" name="order-option" value="latest" checked />
+            <span>최신순</span>
+        </label>
+        <label>
+            <input type="radio" name="order-option" value="price-high" />
+            <span>가격높은순</span>
+        </label>
+        <label>
+            <input type="radio" name="order-option" value="price-low" />
+            <span>가격낮은순</span>
+        </label>
+        <label>
+            <input type="radio" name="order-option" value="name" />
+            <span>이름순</span>
+        </label>
+    </fieldset>
+    
+    <section>
+        <div class="section-div-box">
+            {% for games_item in games_list %}
+            <article>
+                <a href="#" onclick="window.location.href='games/{{ games_item.id }}'">
+                    <div class="img-box game-img-box">
+                        <img src="{{ games_item.image_path[0] }}" alt="game1">
+                    </div>
+                </a>
+                <div class="game-content-box">
+                    <a href="#" onclick="window.location.href='games/{{ games_item.id }}'">
+                        <h3>{{ games_item.title }}</h3>
+                    </a>
+                    <p><span>{{ games_item.price }}</span><span> ₩</span></p>
+                    <p>배포 날짜 : <span>{{ games_item.release_date }}</span></p>
+                    <p>{{ games_item.description }}</p>
+                    <ul class="game-tag">
+                        {% for t in games_item.tags %}
+                        <li>{{ t }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="like">
+                    <div class="img-box">
+                        <span></span>
+                        <a href="#"><img src="../static/images/heart.png" alt="like"></a>
+                        <span></span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+<div class="page">
+    <ul class="pagination">
+        <li><a class="first" href="/games?page=0">처음</a></li>
+        {% if page != 0 %}
+        <li><a class="arrow left" href="/games?page={{ page - 1 }}"><</a></li>
+        {% endif %}
+        {% for i in range(0, total//10+1) %}
+        <li><a class="active num" href="#">{{ i }}</a></li>
+        {% endfor %}
+        {% if page < total // 10 %}
+        <li><a class="arrow right" href="/games?page={{ total // 10 }}">></a></li>
+        {% endif %}
+        <li><a class="last" href="/games?page={{ total // 10 }}">끝</a></li>
+    </ul>
+</div>
+{% endblock %}

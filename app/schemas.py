@@ -1,27 +1,81 @@
+from pydantic import BaseModel, Field
 from typing import List, Union, Optional
 from datetime import date, datetime
-from pydantic import BaseModel
+from pydantic.networks import EmailStr
+
+
+class EmailCodeCheck(BaseModel):
+    email: EmailStr
+    code: str
+    creation_time: datetime
+    expiration_time: datetime
+
+class UserRegister(BaseModel):
+    email: EmailStr
+    hashed_password: str
+    phone_number: str
+    nickname: str = Field(min_length=1, max_length=10)
+    birth_date: date
+    profile_image: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "email": "example@gmail.com",
+                "hashed_password": "hashedpassword",
+                "phone_number": "+821059545452",
+                "nickname": "바다소금",
+                "birth_date": "1999-03-24",
+                "profile_image": "myprofile.png"
+            }
+        }
+
+# class User(UserBase):
+    # id: Optional[int] = Field(title="id is not needed")
+#     email: str
+#     hashed_password: str
+#     phone_number: str
+#     nickname: str
+#     birth_date: date
+#     profile_image: str
+#     created_at: datetime
+#     access_token: str
+#     disabled: bool = False
+#     reports: int = 0
+
+class UserEmailCheck(BaseModel):
+    email: EmailStr
+
+class UserInDB(UserRegister):
+    hashed_password: str
+
 
 class Game(BaseModel):
     id: int
-    name: str
+    title: str
     description: Union[str, None] = None
     price: int
     release_date: date
+    early_access_release_date: date
     developer: str
     publisher: str
     genre: List[str]
     tags: List[str]
+    languages: List[str]
     game_rating: Union[List[str], None] = None
     game_censorship: Union[List[str], None] = None
     platform: List[str]
-    game_requirements: List[dict]
+    minimum_system_requirements: List[dict]
+    recommended_system_requirements: List[dict]
     views: int = 0
     likes: int = 0
     purchase_link: str
     image_path: List[str]
     video_path: Optional[List[str]] = None
-
+    
+class GamesList(BaseModel):
+    total: int = 0
+    games_list: List[str]
 
 class GameCreate(BaseModel):
     name: str
@@ -42,11 +96,11 @@ class GameCreate(BaseModel):
     image_path: List[str]
     video_path: Optional[List[str]] = None
 
-
 class News(BaseModel):
     id: int
     title: str
     content: str
+    content_with_tag: str
     author: str
     written_date: datetime
     last_modified_date: datetime
@@ -55,21 +109,14 @@ class News(BaseModel):
     image_path: Optional[List[str]] = None
     video_path: Optional[List[str]] = None
 
-class NewsCreate(BaseModel):
-    title: str
-    content: str
-    author: str
-    written_date: datetime
-    last_modified_date: datetime
-    views: int = 0
-    likes: int = 0
-    image_path: Optional[List[str]] = None
-    video_path: Optional[List[str]] = None
+class NewsList(BaseModel):
+    total: int = 0
+    news_list: List[str]
 
-class Community(BaseModel):
+class Post(BaseModel):
     id: int
     post_menu: str
-    title: str
+    title: str = Field(min_length=1)
     content: str
     user_id: int
     written_date: datetime
@@ -80,111 +127,10 @@ class Community(BaseModel):
     video_path: Optional[List[str]] = None
     reports: int = 0
 
-    class Config:
-        orm_mode = True
-
-
-class User(BaseModel):
-    id: int
-    email: str
-    hashed_password: str
-    phone_number: str
-    nickname: str
-    birth_date: date
-    profile_image: str
-    created_at: datetime
-    access_token: str
-    disabled: bool = False
-    reports: int = 0
-
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-
-class TokenData(BaseModel):
-    username: str
-
-
-class UserInDB(User):
-    hashed_password: str
-
-
-class UserCreate(BaseModel):
-    email: str
-    hashed_password: str
-    phone_number: str
-    nickname: str
-    birth_date: date
-    profile_image: str
-
-
-class UserLogin(BaseModel):
-    email: str
-    hashed_password: str
-
-
-class Comment(BaseModel):
-    id: int
-    commu_id: int
-    user_id: int
-    written_date: datetime
-    last_modified_date: datetime
+class PostRequest(BaseModel):
+    post_menu: str
+    title: str = Field(min_length=1)
     content: str
-    likes: int = 0
-    reports: int = 0
-
-
-
-class LoginHistory(BaseModel):
-    id: int
-    user_id: int
-    login_time: datetime
-    status: str
-
-
-
-class NewsGame(BaseModel):
-    id: int
-    news_id: int
-    game_id: int
-
-
-class CommunityGame(BaseModel):
-    id: int
-    commu_id: int
-    game_id: int
-
-
-class UserLikedGame(BaseModel):
-    id: int
-    user_id: int
-    game_id: int
-    time: datetime
-
-
-class UserPostedCommunity(BaseModel):
-    id: int
-    user_id: int
-    commu_id: int
-
-
-class UserPostedComment(BaseModel):
-    id: int
-    user_id: int
-    comment_id: int
-
-
-class UserLikedNews(BaseModel):
-    id: int
-    user_id: int
-    news_id: int
-    time: datetime
-
-
-class UserLikedCommunity(BaseModel):
-    id: int
-    user_id: int
-    commu_id: int
-    time: datetime
+    last_modified_date: datetime
+    image_path: Optional[List[str]] = None
+    video_path: Optional[List[str]] = None

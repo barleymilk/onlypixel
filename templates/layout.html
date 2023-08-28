@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Only Pixel</title>
+    <link rel="stylesheet" href="../static/css/basic_form/base.css">
+    <link rel="stylesheet" href="../static/css/basic_form/nav_footer.css">
+    {% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1>Only Pixel</h1>
+            
+            <div class="login-signup">
+                <a href="/login">로그인</a>
+                <span> | </span>
+                <a href="/signup">회원가입</a>
+            </div>
+
+            <nav class="navigation">
+                <div class="logo">
+                    <a href="/"><img src="../static/images/game-logo-removebg-preview.png" alt="Logo"></a>
+                </div>
+                <ul>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/games">Game Finder</a></li>
+                    <li><a href="/arts">Pixel Art</a></li>
+                    <li><a href="/mini-games">Mini Game</a></li>
+                    <li><a href="/posts">Community</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <div class="footer-wrap">
+                <div class="footer-top">
+                    <div class="desc">
+                        <div class="desc-logo-box">
+                            <img src="../static/images/game-logo-removebg-preview.png" alt="logo">
+                        </div>
+                    </div>
+
+                    <div class="sns">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="sns-img-box">
+                                        <img src="../static/images/youtube.png" alt="youtube">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="sns-img-box">
+                                        <img src="../static/images/instagram.png" alt="instagram">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="sns-img-box">
+                                        <img src="../static/images/twitch.png" alt="twitch">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p>2023 Only Pixel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+{% block scripts %}{% endblock %}
+</html>

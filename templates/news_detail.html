@@ -1,102 +1,50 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../static/css/basic_form/base.css">
-        <link rel="stylesheet" href="../static/css/basic_form/nav_footer.css">
-        <link rel="stylesheet" href="../static/css/news_detail.css">
-    </head>
-    <body>
-        <div id="wrap">
-            <header>
-                <h1>Only Pixel</h1>
-                
-                <div class="login-signup">
-                    <a href="login.html">로그인</a>
-                    <span> | </span>
-                    <a href="signup.html">회원가입</a>
-                </div>
+{% extends "layout.html" %}
 
-                <nav class="navigation">
-                    <div class="logo">
-                        <a href="home.html"><img src="./images/game-logo-removebg-preview.png" alt="Logo"></a>
-                    </div>
-                    <ul>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="game.html">Recommendation</a></li>
-                        <li><a href="art_gallery.html">Art Gallery</a></li>
-                        <li><a href="mini_game.html">Mini Game</a></li>
-                        <li><a href="community.html">Community</a></li>
-                    </ul>
-                </nav>
-            </header>
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/news_detail.css">
+{% endblock %}
 
-            <main>
-                <div class="section-div-box">
-                    <div class="news_title">
-                        <h2>title</h2>
-                        <div class="news_info">
-                            <p>작성자 : <span>홍길동</span></p>
-                            <p>작성일 : <span>2023.08.16</span></p>
-                            <p>조회수 : <span>23</span></p>
-                        </div>
-                    </div>
-                    <section>
-                        <article>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum enim incidunt similique! Nisi earum suscipit animi molestias, ea aspernatur ipsam fugit voluptatum eum veniam corrupti quae iste officiis asperiores rem?</p>
-                        </article>
-                    </section>
-                    <div class="share">
-                        <ul>
-                            <li><a>share</a></li>
-                            <li><a>copy</a></li>
-                            <li><a>Email</a></li>
-                        </ul>
-                    </div>
-                    <div class="like">
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </main>
-            
-            <footer>
-                <div class="footer-wrap">
-                    <div class="footer-top">
-                        <div class="desc">
-                            <div class="desc-logo-box">
-                                <img src="../static/images/game-logo-removebg-preview.png" alt="logo">
-                            </div>
-                        </div>
-
-                        <div class="sns">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="sns-img-box">
-                                            <img src="../static/images/youtube.png" alt="youtube">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="sns-img-box">
-                                            <img src="../static/images/instagram.png" alt="instagram">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="sns-img-box">
-                                            <img src="../static/images/twitch.png" alt="twitch">
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p>2023 Only Pixel</p>
-                </div>
-            </footer>
+{% block content %}
+<div class="section-div-box">
+    <div class="news-title">
+        <h2>{{ news_item.title }}</h2>
+        <ul class="news-info">
+            <li>작성자 : <span>{{ news_item.author }}</span></li>
+            <li>작성일 : <span>{{ news_item.written_date }}</span></li>
+            {% if news_item.last_modified_date != news_item.written_date %}
+            <li>수정일 : <span>{{ news_item.last_modified_date }}</span></li>
+            {% endif %}
+            <li>조회수 : <span>{{ news_item.views }}</span></li>
+        </ul>
+    </div>
+    <section>
+        <article class="news-content">
+            <div id="added_content">
+                {{ news_item.content_with_tag | safe}}
+            </div>
+        </article>
+    </section>
+    <div class="share">
+        <ul>
+            <li><a>share</a></li>
+            <li><a>copy</a></li>
+            <li><a>email</a></li>
+        </ul>
+    </div>
+    <div class="like">
+        <div class="like-img-box">
+            <img src="../static/images/heart.png", alt="like">
         </div>
-    </body>
-</html>
+        <p>{{ news_item.likes }}</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function add_content(text) {
+        const element = document.getElementById('added_content');
+        element.innerHTML += text;
+    }
+</script>
+{% endblock %}

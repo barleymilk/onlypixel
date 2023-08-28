@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="../static/css/posts.css">
+{% endblock %}
+
+{% block content %}
+<div class="contents">
+    <div class="search">
+        <form method="post" action="" id="search-form">
+            <input type="text" name="search" placeholder="Search">
+            <input type="image" src="../static/images/search-icon.png" alt="검색" style="width: 40px; height: 40px; position:relative; top: 10px; left: 10px;">
+        </form>
+    </div>
+    <div class="write-button">
+        <a href="#">글쓰기</a>
+    </div>
+
+    <div class="category-list">
+        <ul>
+            <li><a href="#" data-value="게임리뷰">게임리뷰</a></li>
+            <li><a href="#" data-value="프로젝트공유">프로젝트공유</a></li>
+            <li><a href="#" data-value="질문">질문</a></li>
+            <li><a href="#" data-value="잡담">잡담</a></li>
+            <li><a href="#" data-value="자유">자유</a></li>
+        </ul>
+    </div>
+
+    <section>
+        <div class="section-div-box">
+            <article>
+                <div class="writing-heading">
+                    <ul>
+                        <li>말머리</li>
+                        <li>제목</li>
+                        <li>작성자</li>
+                        <li>작성일</li>
+                        <li>조회수</li>
+                        <li>좋아요</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="writing-table">
+                    <ul>
+                        <li>11970</li>
+                        <li><a href="#">안녕하세요!</a></li>
+                        <li><a href="#">바다소금</a></li>
+                        <li>2023.07.29</li>
+                        <li>100</li>
+                        <li>23</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="writing-table">
+                    <ul>
+                        <li>11970</li>
+                        <li><a href="#">안녕하세요!</a></li>
+                        <li><a href="#">바다소금</a></li>
+                        <li>2023.07.29</li>
+                        <li>100</li>
+                        <li>23</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="writing-table">
+                    <ul>
+                        <li>11970</li>
+                        <li><a href="#">안녕하세요!</a></li>
+                        <li><a href="#">바다소금</a></li>
+                        <li>2023.07.29</li>
+                        <li>100</li>
+                        <li>23</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="writing-table">
+                    <ul>
+                        <li>11970</li>
+                        <li><a href="#">안녕하세요!</a></li>
+                        <li><a href="#">바다소금</a></li>
+                        <li>2023.07.29</li>
+                        <li>100</li>
+                        <li>23</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<div class="page">
+    <ul class="pagination">
+        <li><a class="first" href="#">처음</a></li>
+        <li><a class="arrow left" href="#"><</a></li>
+        <li><a class="active num" href="#">1</a></li>
+        <li><a class="active num" href="#">2</a></li>
+        <li><a class="active num" href="#">3</a></li>
+        <li><a class="active num" href="#">4</a></li>
+        <li><a class="active num" href="#">5</a></li>
+        <li><a class="active num" href="#">6</a></li>
+        <li><a class="active num" href="#">7</a></li>
+        <li><a class="active num" href="#">8</a></li>
+        <li><a class="active num" href="#">9</a></li>
+        <li><a class="active num" href="#">10</a></li>
+        <li><a class="arrow right" href="#">></a></li>
+        <li><a class="last" href="#">끝</a></li>
+    </ul>
+</div>
+{% endblock %}

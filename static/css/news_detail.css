@@ -1,0 +1,80 @@
+.navigation ul li:nth-child(1) {
+    color:black;
+    background: radial-gradient( #ccc, white, white );
+}
+
+.news-title h2{
+    margin: 20px 0;
+    font-size: 2rem;
+}
+.news-info {
+    width: 1240px;
+    height: 20px;
+    padding: 5px 0 10px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 24px;
+}
+.news-info li {
+    float: left;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    padding-right: 20px;
+}
+
+.section-div-box section {
+    margin-top: 20px;
+}
+
+.news-content {
+    margin: 20px 0;
+}
+
+.share ul {
+    text-align: center;
+    padding-top: 30px;
+}
+.share li {
+    display: inline-block;
+    width: 140px;
+    height: 42px; line-height: 42px;
+    margin-right: 6px;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+}
+.share li:nth-last-child{
+    margin-right: 0;
+}
+.share li:hover {
+    background-color: rgb(235, 234, 234);
+    cursor:pointer;
+}
+
+.like {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 40px auto 30px auto;
+    cursor: pointer;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.like-img-box {
+    width: 100%; height: 100%;
+    overflow:hidden;
+    margin:0 auto;
+}
+.like-img-box img {
+    width: 30%;
+    height: 30%;
+    object-fit:cover;
+    margin-top: 24px;
+}
+.like p {
+    font-size: 0.8rem;
+    position:relative;
+    top: -32px;
+}
+.like:hover {
+    background-color: rgb(235, 234, 234);
+}

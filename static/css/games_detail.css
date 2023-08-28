@@ -1,0 +1,76 @@
+h2 {
+    margin: 20px 0 30px 0;
+}
+
+.key-content-box {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    /* height: 260px; */
+    height: 332px;
+}
+.key-content-box > div {
+    float: left;
+}
+.media-box {
+    /* width: 480px; */
+    width: 710px;
+    height: 100%;
+}
+.media-box img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius: 10px;
+}
+.info-box {
+    width: 530px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.info-box li {
+    height: 30px; line-height: 30px;
+    margin-bottom: 12px;
+}
+.info-box li:first-child {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.info-box li:nth-child(2) {
+    font-weight: 600;
+}
+.info-box li:last-child {
+    height: 40px; line-height: 40px;
+}
+
+.like {
+    width: 120px; height: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.like-img-box {
+    width: 40px; height: 100%;
+    overflow:hidden;
+    float: left;
+}
+.like img {
+    width: 18px; height: 18px;
+    object-fit:cover;
+    margin: 11px 0 0 12px;
+}
+.like p {
+    font-size: 0.9rem;
+    float: left;
+}
+
+.description {
+    margin-top: 20px;
+    background-color: bisque;
+}
+.description > ul li {
+    margin-bottom: 10px;
+}
